@@ -7,7 +7,6 @@ import java.awt.geom.Ellipse2D;
  * @author leliu
  * @version V1.0
  * 绘图辅助类
- * -------------ChangeLog-----------------
  * @date 2018/12/12 21:07
  */
 public class AlgolVisHelper {
@@ -23,17 +22,24 @@ public class AlgolVisHelper {
 	}
 
 	/**
-	 * 画圆
+	 * 画空心圆
 	 * @param g2d 画板
 	 * @param x 圆心横坐标
 	 * @param y 圆心纵坐标
 	 * @param r 半径
 	 */
-	public static void setStrockCircle(Graphics2D g2d,int x,int y,int r){
+	public static void strockCircle(Graphics2D g2d,int x,int y,int r){
 		Ellipse2D.Double circle = new Ellipse2D.Double(x - r, y - r, 2 * r, 2 * r);
 		g2d.draw(circle);
 	}
 
+	/**
+	 * 画实心圆
+	 * @param g2d 画板
+ 	 * @param x x轴坐标
+	 * @param y y坐标
+	 * @param r 半径
+	 */
 	public static void fillCircle(Graphics2D g2d,int x,int y,int r){
 		Ellipse2D.Double circle = new Ellipse2D.Double(x - r, y - r, 2 * r, 2 * r);
 		g2d.fill(circle);
