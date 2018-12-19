@@ -27,7 +27,6 @@ public class MyMouseListener implements MouseListener{
         // 将画布的左上角坐标置位 （0,0）
         int y = -(jFrame.getBounds().height - jFrame.getCanvasHeight());
         e.translatePoint(0, y);
-        System.out.println(e.getX() + " : " + e.getY());
     }
 
     @Override

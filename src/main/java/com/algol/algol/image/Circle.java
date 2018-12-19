@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.awt.*;
+
 /**
  * Created by dana on 2018/12/18.
  * 圆
@@ -29,6 +31,19 @@ public class Circle {
      * 速度
      */
     private int vx ,vy;
+
+    public Circle(int x, int y, int r, int vx, int vy) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.vx = vx;
+        this.vy = vy;
+    }
+
+    /**
+     * 是空心圆
+     */
+    private boolean filled = true;
 
     /**
      * 移动
@@ -63,6 +78,14 @@ public class Circle {
             y = maxy - r;
             vy = -vy;
         }
+    }
+
+    /**
+     * 判断点是否在圆内
+     * @param point 点
+     */
+    public boolean contain(Point point){
+        return (x - point.x) * (x - point.x) + (y - point.y)* (y - point.y) <= r * r;
     }
 
 }

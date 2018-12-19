@@ -11,7 +11,7 @@ import java.awt.geom.Ellipse2D;
 /**
  * @author leliu
  * @version V1.0
- * @Description: 自定义jframe窗口
+ *  自定义jframe窗口
  * -------------ChangeLog-----------------
  * @date 2018/12/12 20:09
  */
@@ -52,7 +52,11 @@ public class AlgolFrame extends JFrame {
 			AlgolVisHelper.setWidth(g2d,1);
 			AlgolVisHelper.setColor(g2d,Color.RED);
 			for (Circle circle : circles) {
-				AlgolVisHelper.strockCircle(g2d, circle.getX(),circle.getY(), circle.getR());
+				if(circle.isFilled()){
+					AlgolVisHelper.strockCircle(g2d, circle.getX(),circle.getY(), circle.getR());
+				}else{
+					AlgolVisHelper.fillCircle(g2d,circle.getX(),circle.getY(), circle.getR());
+				}
 			}
 		}
 
