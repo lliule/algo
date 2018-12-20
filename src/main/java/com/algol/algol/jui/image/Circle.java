@@ -1,4 +1,4 @@
-package com.algol.algol.image;
+package com.algol.algol.jui.image;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,9 +1,9 @@
-package com.algol.algol.controller;
+package com.algol.algol.jui.controller;
 
-import com.algol.algol.cartoon.BallSport;
-import com.algol.algol.image.Circle;
-import com.algol.algol.listener.MyKeyListener;
-import com.algol.algol.swing.AlgolFrame;
+import com.algol.algol.jui.cartoon.BallSport;
+import com.algol.algol.jui.image.Circle;
+import com.algol.algol.jui.listener.MyKeyListener;
+import com.algol.algol.jui.swing.AlgolFrame;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;

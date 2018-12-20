@@ -1,6 +1,6 @@
-package com.algol.algol.listener;
+package com.algol.algol.jui.listener;
 
-import com.algol.algol.cartoon.BallSport;
+import com.algol.algol.jui.cartoon.BallSport;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

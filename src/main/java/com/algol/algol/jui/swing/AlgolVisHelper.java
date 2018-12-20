@@ -1,7 +1,8 @@
-package com.algol.algol.swing;
+package com.algol.algol.jui.swing;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 
 /**
  * @author leliu
@@ -43,5 +44,10 @@ public class AlgolVisHelper {
 	public static void fillCircle(Graphics2D g2d,int x,int y,int r){
 		Ellipse2D.Double circle = new Ellipse2D.Double(x - r, y - r, 2 * r, 2 * r);
 		g2d.fill(circle);
+	}
+
+	public static void fillRectangle(Graphics2D g2d, int x, int y, int width, int height) {
+		Rectangle2D.Double rectangle = new Rectangle.Double(x, y, width, height);
+		g2d.draw(rectangle);
 	}
 }

@@ -1,7 +1,7 @@
-package com.algol.algol.cartoon;
+package com.algol.algol.jui.cartoon;
 
-import com.algol.algol.image.Circle;
-import com.algol.algol.swing.AlgolFrame;
+import com.algol.algol.jui.image.Circle;
+import com.algol.algol.jui.swing.AlgolFrame;
 import com.algol.algol.util.Util;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,10 +1,9 @@
-package com.algol.algol.listener;
+package com.algol.algol.jui.listener;
 
-import com.algol.algol.swing.AlgolFrame;
+import com.algol.algol.jui.swing.AlgolFrame;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
 
-import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 

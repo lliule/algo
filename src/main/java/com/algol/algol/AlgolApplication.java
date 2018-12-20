@@ -1,18 +1,18 @@
 package com.algol.algol;
 
-import com.algol.algol.controller.AlgoVisualize;
+import com.algol.algol.fenqian.DevideMoneyController;
+import com.algol.algol.jui.controller.AlgoVisualize;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author dana
+ */
 @SpringBootApplication
 public class AlgolApplication {
 
 	public static void main(String[] args) {
-//		SpringApplication.run(AlgolApplication.class, args);
-		int sceneWidth = 800;
-		int sceneHeight = 800;
-		int n = 10;
+		int sceneWidth = 1000,sceneHeight = 1000;
 
-		new AlgoVisualize(sceneWidth,sceneHeight,n);
-
+		new DevideMoneyController(sceneWidth, sceneHeight);
 	}
 }

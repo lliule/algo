@@ -1,12 +1,11 @@
-package com.algol.algol.swing;
+package com.algol.algol.jui.swing;
 
-import com.algol.algol.image.Circle;
+import com.algol.algol.jui.image.Circle;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 
 /**
  * @author leliu
