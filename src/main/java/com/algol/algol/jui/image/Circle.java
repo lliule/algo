@@ -27,6 +27,12 @@ public class Circle {
      */
     private int r;
 
+    public Circle(int x, int y, int r) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+    }
+
     /**
      * 速度
      */
@@ -85,6 +91,9 @@ public class Circle {
      * @param point 点
      */
     public boolean contain(Point point){
+        if(point == null){
+            throw  new NullPointerException("点为null");
+        }
         return (x - point.x) * (x - point.x) + (y - point.y)* (y - point.y) <= r * r;
     }
 

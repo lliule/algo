@@ -1,6 +1,5 @@
-package com.algol.algol.fenqian;
+package com.algol.algol.mengtekaluo.fenqian;
 
-import com.algol.algol.jui.image.Circle;
 import com.algol.algol.jui.swing.AlgolVisHelper;
 import lombok.Getter;
 import lombok.Setter;
@@ -50,10 +49,16 @@ public class DevideMonenyFrame extends JFrame {
 			RenderingHints renderingHints = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			g2d.addRenderingHints(renderingHints);
 			// 具体绘制
-			AlgolVisHelper.setColor(g2d,Color.BLUE);
+
 			int w = canvasWidth / money.length;
 			for (int i = 0; i < money.length; i++) {
-				AlgolVisHelper.fillRectangle(g2d, i * w + 1, canvasHeight - money[i],w-1, money[i]);
+				if(money[i] > 0){
+					AlgolVisHelper.setColor(g2d,Color.BLUE);
+					AlgolVisHelper.fillRectangle(g2d, i * w + 1, canvasHeight / 2 - money[i],w-1, money[i]);
+				}else if(money[i] < 0){
+					AlgolVisHelper.setColor(g2d,Color.RED);
+					AlgolVisHelper.fillRectangle(g2d, i * w + 1, canvasHeight/2, w-1 , -money[i]);
+				}
 			}
 		}
 
