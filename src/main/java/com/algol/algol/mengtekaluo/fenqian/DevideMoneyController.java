@@ -1,4 +1,4 @@
-package com.algol.algol.fenqian;
+package com.algol.algol.mengtekaluo.fenqian;
 
 import com.algol.algol.util.Util;
 
