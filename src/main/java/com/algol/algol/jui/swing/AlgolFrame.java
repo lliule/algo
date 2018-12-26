@@ -1,6 +1,7 @@
 package com.algol.algol.jui.swing;
 
 import com.algol.algol.jui.image.Circle;
+import com.algol.algol.util.AlgolVisHelper;
 import lombok.Getter;
 import lombok.Setter;
 
