@@ -1,7 +1,7 @@
 package com.algol.algol.mengtekaluo.pi;
 
 import com.algol.algol.jui.image.Circle;
-import com.algol.algol.jui.swing.AlgolVisHelper;
+import com.algol.algol.util.AlgolVisHelper;
 import lombok.Getter;
 import lombok.Setter;
 
