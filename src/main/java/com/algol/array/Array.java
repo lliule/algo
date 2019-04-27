@@ -4,9 +4,9 @@ package com.algol.array;
  * 实现自己的数组类，封装java 的数组
  * @author leliu
  */
-public class Array {
+public class Array<T> {
 
-	private int[] data;
+	private T[] data;
 	private int size;
 
 	/**
@@ -14,7 +14,7 @@ public class Array {
 	 * @param capacity 容量
 	 */
 	public Array(int capacity) {
-		data = new int[capacity];
+		data = (T[])new Object[capacity];
 		this.size = 0;
 	}
 
@@ -41,7 +41,7 @@ public class Array {
 	/**
 	 * 向数组最后添加一个元素
 	 */
-	public void addLast(int e) {
+	public void addLast(T e) {
 		add(size, e);
 	}
 
@@ -49,7 +49,7 @@ public class Array {
 	 * 向数组头添加一个元素
 	 * @param e e
 	 */
-	public void addFirst(int e) {
+	public void addFirst(T e) {
 		add(0, e);
 	}
 
@@ -58,7 +58,7 @@ public class Array {
 	 * @param index 位置
 	 * @param e 元素
 	 */
-	public void add(int index, int e) {
+	public void add(int index, T e) {
 		if(size == data.length) {
 			throw new IllegalArgumentException("添加元素失败，数据已经没有空间");
 		}
@@ -89,7 +89,45 @@ public class Array {
 
 	}
 
-	public int get(int index) {
+
+	public T remove(int index) {
+		if(index < 0 || index >= size) {
+			throw new IllegalArgumentException("删除元素失败，index >= 0  && index <" + size);
+		}
+		T ret = data[index];
+		for (int i = index; i < size; i++) {
+			data[i] = data[i + 1];
+		}
+		data[size] = null;
+		size -- ;
+		return ret;
+	}
+
+	public T removeLast(){
+		return remove(size - 1);
+	}
+
+	public T removeFirst(){
+		return remove(0);
+	}
+
+	public void removeElement(T e) {
+		int index = find(e);
+		if(index != -1) {
+			remove(index);
+		}
+	}
+
+	private int find(T e) {
+		for (int i = 0; i < size; i++) {
+			if(data[i].equals(e)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public T get(int index) {
 		if(index < 0 || index >= size) {
 			throw new IllegalArgumentException("参数异常!");
 		}
