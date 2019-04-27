@@ -59,16 +59,16 @@ public class Array<T> {
 	 * @param e 元素
 	 */
 	public void add(int index, T e) {
-		if(size == data.length) {
-			throw new IllegalArgumentException("添加元素失败，数据已经没有空间");
-		}
-
 		if(index < 0 || index > size) {
 			throw new IllegalArgumentException("添加元素失败，index >= 0  && index <" + size);
 		}
 
-		// 将 指定位置之后的元素向后移动
+		// 数组空间扩容
+		if(size == data.length) {
+			resize(2 * data.length);
+		}
 
+		// 将 指定位置之后的元素向后移动
 		for (int i = size - 1; i >= index ; i--) {
 			data[i+1] = data[i];
 		}
@@ -90,6 +90,7 @@ public class Array<T> {
 	}
 
 
+
 	public T remove(int index) {
 		if(index < 0 || index >= size) {
 			throw new IllegalArgumentException("删除元素失败，index >= 0  && index <" + size);
@@ -100,6 +101,9 @@ public class Array<T> {
 		}
 		data[size] = null;
 		size -- ;
+		if(size == data.length / 2) {
+			resize(data.length / 2);
+		}
 		return ret;
 	}
 
@@ -150,5 +154,18 @@ public class Array<T> {
 		return builder.toString();
 	}
 
+
+	/**
+	 * 扩容
+	 * @param capacity 容量
+	 */
+	private void resize(int capacity) {
+		System.out.println("数组扩容。。。");
+		T[] temp = (T[])new Object[capacity];
+		for (int i = 0; i < size; i++) {
+			temp[i] = data[i];
+		}
+		data = temp;
+	}
 
 }

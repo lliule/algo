@@ -10,20 +10,13 @@ public class ArrayTest {
 
 	@Test
 	public void testToString() {
-		Array<Integer> arr = new Array<>(20);
-		for (int i = 0; i < 5; i++) {
+		Array<Integer> arr = new Array<>();
+		for (int i = 0; i < 10; i++) {
 			arr.addLast(i);
 		}
+		System.out.println(arr);
 
 		arr.add(1, 100);
-		arr.addFirst(-1);
-
-		System.out.println(arr);
-
-		arr.remove(2);
-		System.out.println(arr);
-
-		arr.removeElement(3);
 		System.out.println(arr);
 
 		arr.removeLast();
