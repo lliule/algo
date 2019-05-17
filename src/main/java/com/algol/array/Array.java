@@ -101,7 +101,7 @@ public class Array<T> {
 		}
 		data[size] = null;
 		size -- ;
-		if(size == data.length / 2) {
+		if(size == data.length / 4) {
 			resize(data.length / 2);
 		}
 		return ret;
@@ -160,7 +160,6 @@ public class Array<T> {
 	 * @param capacity 容量
 	 */
 	private void resize(int capacity) {
-		System.out.println("数组扩容。。。");
 		T[] temp = (T[])new Object[capacity];
 		for (int i = 0; i < size; i++) {
 			temp[i] = data[i];
